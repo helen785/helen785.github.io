@@ -1,0 +1,31 @@
+﻿{
+	"version": 1558524161,
+	"fileList": [
+		"data.js",
+		"c2runtime.js",
+		"jquery-2.1.1.min.js",
+		"offlineClient.js",
+		"images/controle-sheet0.png",
+		"images/tiro-sheet0.png",
+		"images/tiro-sheet1.png",
+		"images/projetil-sheet0.png",
+		"images/haste1-sheet0.png",
+		"images/haste1-sheet1.png",
+		"images/haste4-sheet0.png",
+		"images/haste4-sheet1.png",
+		"images/haste2-sheet0.png",
+		"images/haste2-sheet1.png",
+		"images/haste3-sheet0.png",
+		"images/haste3-sheet1.png",
+		"images/sprite-sheet0.png",
+		"images/sprite2-sheet0.png",
+		"images/adversario-sheet0.png",
+		"images/barradestruir-sheet0.png",
+		"icon-16.png",
+		"icon-32.png",
+		"icon-114.png",
+		"icon-128.png",
+		"icon-256.png",
+		"loading-logo.png"
+	]
+}
