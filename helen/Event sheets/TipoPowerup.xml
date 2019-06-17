@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TipoPowerup</name>
+    <events>
+        <comment>0 - tempo existencia&#x0D;&#x0A;1 - isTimed * &#x0D;&#x0A;2 - power up time&#x0D;&#x0A;3 - isShootingSpeed * &#x0D;&#x0A;4 - Shooting Interval &#x0D;&#x0A;5 - is Bullet Changer *&#x0D;&#x0A;6 - BulletType</comment>
+        <event-block sid="833425244503428">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="759787341350142" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>power up 1</comment>
+                <event-block sid="500845375555700">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="112293606494380" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">2</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="543892736637599" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="631126856853059" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="940969106051894" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">3</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="568768637611065" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">4</param>
+                            <param id="2" name="Value">0.05</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="803064231920489" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">5</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="516719728655151" type="PowerupsArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">6</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>power up 2</comment>
+                <event-block sid="534377156246032">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="208665271446593" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">2</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="938865478775119" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="671682062014433" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="591060360584237" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">3</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="792321830850397" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">4</param>
+                            <param id="2" name="Value">0.05</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="956764213962773" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">5</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="215903210439397" type="PowerupsArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">6</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

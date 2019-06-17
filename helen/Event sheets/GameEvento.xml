@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameEvento</name>
+    <events>
+        <include>TipoPowerup</include>
+        <include>TipoInimigo</include>
+        <include>PowerupEvento</include>
+        <include>BalaEvento</include>
+        <include>InimigoEvento</include>
+        <event-group description="" sid="271023228247648" title="Player Controls">
+            <sub-events>
+                <event-block any="1" sid="455172927120489">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="867637261839093" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                        <condition id="3" name="On touched object" sid="853701362140431" type="Touch">
+                            <param id="0" name="Object">botão</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="455794584901127" type="controle">
+                            <param id="0" name="Instance variable">IsShooting</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="585736749234792">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="514731917423073" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                        <condition id="4" name="Is touching object" sid="774483356487109" type="Touch">
+                            <param id="0" name="Object">botão</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="432617458243008">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="340370672953269" type="controle">
+                                    <param id="0" name="Instance variable">IsShooting</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="843380627726996" type="System">
+                                    <param id="0" name="Interval (seconds)">controle.ShootingInterval</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="907227567143365" type="System">
+                                    <param id="0" name="Object to create">Bullet</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">controle.ImagePointX(1)</param>
+                                    <param id="3" name="Y">controle.ImagePointY(1)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="919684432954831" type="Bullet">
+                                    <param id="0" name="Instance variable">IsPlaye</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="272082433182275" type="Bullet">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">BulletArray.At(controle.BulletType,0)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="268924366254114" type="Bullet">
+                                    <param id="0" name="Speed">BulletArray.At(controle.BulletType, 1)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="132738017764467" type="Bullet">
+                                    <param id="0" name="Width">BulletArray.At(controle.BulletType, 2)</param>
+                                    <param id="1" name="Height">BulletArray.At(controle.BulletType, 3)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="802902612886802" type="Bullet">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="786249880843908">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="999556963141595" type="botão">
+                                    <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="510185313351951" type="botão">
+                                    <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="624505570366401">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="815798228294199" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="630464500467079" type="controle">
+                            <param id="0" name="Instance variable">IsShooting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="615376006779440">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="346336546011202" type="botão">
+                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="253712521423859" type="botão">
+                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="464008992946869">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="432044767031910" type="Touch" />
+                        <condition id="4" name="Is touching object" sid="513973121290452" type="Touch">
+                            <param id="0" name="Object">botão</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="541327864208609" type="controle">
+                            <param id="0" name="Instance variable">IsShooting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="602802574850932">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="515841390193997" type="botão">
+                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="805530441039306" type="botão">
+                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="956955792934780" title="Player Moviment">
+            <sub-events>
+                <comment>Up</comment>
+                <event-block any="1" sid="970479950494142">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="695837303861441" type="Touch">
+                            <param id="0" name="Object">seta1</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="208928790649798" type="Keyboard">
+                            <param id="0" name="Key">38</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="108061326902857" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="846299586521936" type="controle">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="223932235586864">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="183714731882981" type="seta1">
+                                    <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="197432040435372" type="seta1">
+                                    <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="997451898398371">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="729498330595135" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="580245632067196">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="176687819636704" type="seta1">
+                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="454996064452220" type="seta1">
+                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Down</comment>
+                        <event-block any="1" sid="122285636213728">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="846874302388947" type="Touch">
+                                    <param id="0" name="Object">seta3</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="286421781730413" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="814849246336101" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="900088093076165" type="controle">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="310468686786729">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="940897074140393" type="seta3">
+                                            <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="535084509885636" type="seta3">
+                                            <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="825779612941952">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="981718407477005" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="723359143121052">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="970399408834853" type="seta3">
+                                            <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="480313593250545" type="seta3">
+                                            <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Left</comment>
+                                <event-block any="1" sid="131128072101294">
+                                    <conditions>
+                                        <condition id="4" name="Is touching object" sid="242301455628378" type="Touch">
+                                            <param id="0" name="Object">seta4</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="411049373275807" type="Keyboard">
+                                            <param id="0" name="Key">37</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="708811428221281" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="334542310072696" type="controle">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="365142066114711">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="501328442025401" type="seta4">
+                                                    <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="294336785592140" type="seta4">
+                                                    <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="493234407820689">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="160305364204589" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="390391162218695">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="293589766892689" type="seta4">
+                                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="150041997949447" type="seta4">
+                                                    <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>Rigth</comment>
+                                        <event-block any="1" sid="727999882270141">
+                                            <conditions>
+                                                <condition id="4" name="Is touching object" sid="294442501309017" type="Touch">
+                                                    <param id="0" name="Object">seta2</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="661590650739877" type="Keyboard">
+                                                    <param id="0" name="Key">39</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="907342253936535" type="Keyboard">
+                                                    <param id="0" name="Key">68</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="8Direction" id="7" name="Simulate control" sid="532547339341170" type="controle">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="953384849575524">
+                                                    <conditions>
+                                                        <condition id="2" inverted="1" name="Is playing" sid="846298824269031" type="seta2">
+                                                            <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="884807456013942" type="seta2">
+                                                            <param id="0" name="Animation">&quot;BottonDown&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="769113919850104">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="456053904699768" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="708503348292238">
+                                                    <conditions>
+                                                        <condition id="2" inverted="1" name="Is playing" sid="250173894174294" type="seta2">
+                                                            <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="770920039346537" type="seta2">
+                                                            <param id="0" name="Animation">&quot;BottonUp&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="Dano com a bala aqui u.u" sid="107287394370949" title="Player Dano">
+                    <sub-events>
+                        <event-block sid="196541583057470">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="727234679253272" type="controle">
+                                    <param id="0" name="Instance variable">HP</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="666890105406145" type="controle" />
+                                <action id="-5" name="Set width" sid="183158710565741" type="HP">
+                                    <param id="0" name="Width">controle.HP * 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Shielddddd</comment>
+                        <event-block sid="268203160105463">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="385129997974148" type="controle">
+                                    <param id="0" name="Object">Bullet</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="716318044153607" type="Bullet">
+                                    <param id="0" name="Instance variable">IsPlaye</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="255730556554405">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="637876308571460" type="controle">
+                                            <param id="0" name="Instance variable">Shield</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">Bullet.Damage</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="481438622151276" type="controle">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="646010948266656" type="HP">
+                                            <param id="0" name="Width">controle.HP * 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="276578509258211">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="529327658291982" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="281689304671878" type="controle">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Value">Bullet.Damage</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="248905811567535" type="HP">
+                                            <param id="0" name="Width">controle.HP * 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="468629345269902">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="592152578096815" type="controle">
+                                    <param id="0" name="Object">inimigo</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="650329939004775">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="945816026262146" type="controle">
+                                            <param id="0" name="Instance variable">Shield</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">inimigo.DamageIni</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="170711760029325" type="controle">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="407202865165885" type="HP">
+                                            <param id="0" name="Width">controle.HP * 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="654461051731646">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="760497168961629" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="164396691582119" type="controle">
+                                            <param id="0" name="Instance variable">HP</param>
+                                            <param id="1" name="Value">inimigo.DamageIni</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="435895718148079" type="HP">
+                                            <param id="0" name="Width">controle.HP * 1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="268490268586114">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="660417449040984" type="controle">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="470301979010420" type="Bullet">
+                    <param id="0" name="Instance variable">IsPlaye</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="327623197621677">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="349613943774555" type="controle">
+                            <param id="0" name="Instance variable">IsInuneravel</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="190333739796414" type="controle">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">Bullet.SemDano</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="525233675826209" type="HP">
+                            <param id="0" name="Width">controle.HP * 1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="227611593776147" type="System">
+                            <param id="0" name="Seconds">controle.VunerabilidadeTempo</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="516806685304705" type="controle">
+                            <param id="0" name="Instance variable">IsInuneravel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="606175109680243">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="299177983034740" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="151287782451906" type="controle">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="879381849439341" type="controle">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">Bullet.Damage</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="941132110756089" type="HP">
+                            <param id="0" name="Width">controle.HP * 1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="588636421552031" type="controle">
+                            <param id="0" name="Instance variable">IsInuneravel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

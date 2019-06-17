@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PowerupEvento</name>
+    <events>
+        <event-block sid="622165973379131">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="490911837184826" type="inimigo" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="104755452411826">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="260297603093351" type="System">
+                            <param id="0" name="First value">random(0, 1)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="683820939033226" type="System">
+                            <param id="0" name="Object to create">PoerUp</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">inimigo.ImagePointX(0)</param>
+                            <param id="3" name="Y">inimigo.ImagePointY(0)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="967857963531430" type="System">
+                            <param id="0" name="Seconds">PoerUp.TempoExistencia</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="266093613148356" type="PoerUp" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="994251851743763">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="639177862411574" type="PoerUp">
+                    <param id="0" name="Object">controle</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="407103919233208" type="PoerUp" />
+            </actions>
+            <sub-events>
+                <event-block sid="541374453538505">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="924544694634038" type="PoerUp">
+                            <param id="0" name="Instance variable">isShootingSpeed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="303404264320352" type="controle">
+                            <param id="0" name="Instance variable">temp_ShootingInterval</param>
+                            <param id="1" name="Value">Self.ShootingInterval</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="545850415441681" type="controle">
+                            <param id="0" name="Instance variable">ShootingInterval</param>
+                            <param id="1" name="Value">PoerUp.ShootingInterval</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="457302671527231">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="213096650844941" type="PoerUp">
+                            <param id="0" name="Instance variable">isBulletChanger</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="306862308843392" type="controle">
+                            <param id="0" name="Instance variable">temp_BulletType</param>
+                            <param id="1" name="Value">Self.BulletType</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="986809919131066" type="controle">
+                            <param id="0" name="Instance variable">BulletType</param>
+                            <param id="1" name="Value">PoerUp.BulletType</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="226545456326124">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="245309294793613" type="PoerUp">
+                            <param id="0" name="Instance variable">IsTimed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="0" name="Start timer" sid="767503450635956" type="controle">
+                            <param id="0" name="Duration">PoerUp.PowerUpTime</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;powerup&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="458761203103169">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="181284619832530" type="controle">
+                    <param id="0" name="Tag">&quot;powerup&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="634411683335340" type="controle">
+                    <param id="0" name="Instance variable">BulletType</param>
+                    <param id="1" name="Value">Self.temp_BulletType</param>
+                </action>
+                <action id="-10" name="Set value" sid="925918550076893" type="controle">
+                    <param id="0" name="Instance variable">ShootingInterval</param>
+                    <param id="1" name="Value">Self.temp_ShootingInterval</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="911824126770791">
+            <conditions>
+                <condition id="-18" name="On created" sid="521614358920456" type="PoerUp" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="tipo" sid="128331685974084" static="0" type="number">0</variable>
+                <event-block sid="404978317860017">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="792510521883676" type="System">
+                            <param id="0" name="Variable">tipo</param>
+                            <param id="1" name="Value">choose(0, 1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="817650372514909" type="PoerUp">
+                            <param id="0" name="Instance variable">TempoExistencia</param>
+                            <param id="1" name="Value">PowerupsArray.At(tipo, 0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="954210135415408" type="PoerUp">
+                            <param id="0" name="Instance variable">PowerUpTime</param>
+                            <param id="1" name="Value">PowerupsArray.At(tipo, 2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="203497249795591" type="PoerUp">
+                            <param id="0" name="Instance variable">TempoExistencia</param>
+                            <param id="1" name="Value">PowerupsArray.At(tipo, 4)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="239860518868776" type="PoerUp">
+                            <param id="0" name="Instance variable">TempoExistencia</param>
+                            <param id="1" name="Value">PowerupsArray.At(tipo, 6)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>isTimed</comment>
+                        <event-block sid="233838277849346">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="210794092401989" type="PowerupsArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="717766751417395" type="PoerUp">
+                                    <param id="0" name="Instance variable">IsTimed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="427618928429136">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="774803023513702" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="384137818897914" type="PoerUp">
+                                    <param id="0" name="Instance variable">IsTimed</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>isShootingSpeed</comment>
+                        <event-block sid="769740744513366">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="899433801847500" type="PowerupsArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">3</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="149532721960629" type="PoerUp">
+                                    <param id="0" name="Instance variable">isShootingSpeed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="834792889383395">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="881244332112703" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="292179730576997" type="PoerUp">
+                                    <param id="0" name="Instance variable">isShootingSpeed</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>isBulletChanger</comment>
+                        <event-block sid="635746383862796">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="210387424378596" type="PowerupsArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">5</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="976362689433688" type="PoerUp">
+                                    <param id="0" name="Instance variable">isBulletChanger</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="376436868312201">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="509904191950102" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="301521193062583" type="PoerUp">
+                                    <param id="0" name="Instance variable">isBulletChanger</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BalaEvento</name>
+    <events>
+        <comment>Ordem das propriedades da bala: &#x0D;&#x0A;0 = damege&#x0D;&#x0A;1 = speed&#x0D;&#x0A;2 = size x&#x0D;&#x0A;3 = size y</comment>
+        <event-block sid="626464238589023">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="232287248217128" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Bala 1</comment>
+                <event-block sid="950812375059480">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="285277770102222" type="BulletArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="807430163346109" type="BulletArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1500</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="477167846808992" type="BulletArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">28</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="314593663222588" type="BulletArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">3</param>
+                            <param id="2" name="Value">16</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Bala 2</comment>
+                <event-block sid="395019648022895">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="871622827824904" type="BulletArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">30</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="352354310564260" type="BulletArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1200</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="738839713171247" type="BulletArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">32</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="305419357733818" type="BulletArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">3</param>
+                            <param id="2" name="Value">32</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

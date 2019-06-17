@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Atividade</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>26500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>854</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Portrait</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Arrays">
+            <object-type global="1" name="BulletArray" sid="552892013109629">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="EnemiesArray" sid="705310845194459">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="PowerupsArray" sid="646469219894224">
+                <plugin id="Arr" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Interface">
+            <object-type name="seta3" sid="973419301307629">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="BottonUp" pingpong="0" repeatcount="1" repeatto="0" sid="492330753535638" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="BottonDown" pingpong="0" repeatcount="1" repeatto="0" sid="549822290032588" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="seta4" sid="880869567552327">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="BottonUp" pingpong="0" repeatcount="1" repeatto="0" sid="475929613130314" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="BottonDown" pingpong="0" repeatcount="1" repeatto="0" sid="239709689092114" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="seta2" sid="263750164875685">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="BottonUp" pingpong="0" repeatcount="1" repeatto="0" sid="892901136493176" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="BottonDown" pingpong="0" repeatcount="1" repeatto="0" sid="138057519707030" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="seta1" sid="519359212663238">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="BottonUp" pingpong="0" repeatcount="1" repeatto="0" sid="259614878450971" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="BottonDown" pingpong="0" repeatcount="1" repeatto="0" sid="663339489620169" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="botão" sid="702387075082971">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="BottonUp" pingpong="0" repeatcount="1" repeatto="0" sid="883863375181697" speed="5">
+                        <frame duration="1" hotspotX="0.62766" hotspotY="0.478723" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="BottonDown" pingpong="0" repeatcount="1" repeatto="0" sid="150886180997796" speed="5">
+                        <frame duration="1" hotspotX="0.62766" hotspotY="0.478723" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HP" sid="255506650986090">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-type name="controle" sid="544704464887124">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="BulletType" sid="341224461258055" type="number" />
+                <instance-variable name="temp_BulletType" sid="299857545183407" type="number" />
+                <instance-variable name="IsShooting" sid="998393507644849" type="boolean" />
+                <instance-variable name="ShootingInterval" sid="358612564821314" type="number" />
+                <instance-variable name="temp_ShootingInterval" sid="293079507477520" type="number" />
+                <instance-variable name="HP" sid="616951793363484" type="number" />
+                <instance-variable name="Shield" sid="870907088147383" type="number" />
+                <instance-variable name="IsInuneravel" sid="582438306266892" type="boolean" />
+                <instance-variable name="VunerabilidadeTempo" sid="255637256942085" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="255798280902446">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="8Direction2" sid="581707530405084">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="178382944841254">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="382422814117423">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="192054579398279">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="281115363155834" speed="5">
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.522222" original-source="C:\Users\20171170150068\Pictures\Sem Título-1.png">
+                        <image-point name="pow" x="0.507692" y="0.0555556" />
+                        <collision-poly>
+                            <point x="0.981273" y="0.885886" />
+                            <point x="0.501873" y="0.996997" />
+                            <point x="0.011236" y="0.894895" />
+                            <point x="0.146067" y="0.501502" />
+                            <point x="0.2397" y="0.291291" />
+                            <point x="0.501873" y="0.006006" />
+                            <point x="0.764045" y="0.291291" />
+                            <point x="0.857678" y="0.501502" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="699257436598517">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Damage" sid="792147328080982" type="number" />
+                <instance-variable name="IsPlaye" sid="795715168570050" type="boolean" />
+                <instance-variable name="SemDano" sid="828161107644811" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="479526081389590">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Animation1" pingpong="0" repeatcount="1" repeatto="0" sid="933881548640081" speed="5">
+                    <frame duration="1" hotspotX="1.03784" hotspotY="0.771812" original-source="C:\Users\20171170150073\Desktop\bombom-desenho-png-3.png">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.228188" hotspotY="1.03784" />
+                    <frame duration="1" hotspotX="0.228188" hotspotY="1.03784" />
+                    <frame duration="1" hotspotX="0.228188" hotspotY="1.03784" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="283615937874959">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Touch" sid="635791279828598">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="TiledBackground" sid="550748453789795">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="inimigo" sid="376206365718089">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Energia" sid="450566425330586" type="number" />
+                <instance-variable name="BulletTypeIni" sid="995180433681867" type="number" />
+                <instance-variable name="Shootintervalo" sid="695794856980260" type="number" />
+                <instance-variable name="DamageIni" sid="732090803515784" type="number" />
+                <instance-variable name="Shield" sid="718360716302895" type="number" />
+                <instance-variable name="IsShooting" sid="756561390686518" type="boolean" />
+                <instance-variable name="Invuneravel" sid="533920355425706" type="boolean" />
+                <instance-variable name="VunerabilidadeTempo" sid="219778711200988" type="number" />
+                <instance-variable name="isSideMover" sid="956059371549076" type="boolean" />
+                <instance-variable name="SideMovementSpeed" sid="761865896730025" type="number" />
+                <instance-variable name="isMoveDown" sid="792018059106040" type="boolean" />
+                <instance-variable name="direcao" sid="484518961177230" type="string" />
+                <instance-variable name="destroyOnBottom" sid="175247243850070" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="MovimentoBaixo" sid="225426042555325">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="891439243164901">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="MovimentoLados" sid="207590208024721">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="normal" pingpong="0" repeatcount="1" repeatto="0" sid="721803907989430" speed="5">
+                    <frame duration="1" hotspotX="0.545" hotspotY="0.484615" original-source="C:\Users\adnat\Downloads\kisspng-himouto-umaru-chan-telegram-clip-art-5b31b46b672cd1.3232210915299841074226.png">
+                        <image-point name="p" x="0.5" y="0.992308" />
+                        <collision-poly>
+                            <point x="0.126966" y="0.310616" />
+                            <point x="0.547538" y="0.00638251" />
+                            <point x="0.937956" y="0.351038" />
+                            <point x="0.961762" y="0.482943" />
+                            <point x="0.969698" y="0.657398" />
+                            <point x="0.547538" y="0.993543" />
+                            <point x="0.0412638" y="0.770156" />
+                            <point x="0.0857016" y="0.482943" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gravidade" sid="850999145111971">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="291187799209369" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sensor" sid="796402197540152">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="958995968328653" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="2.11538" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="fundo" sid="636112667619683">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\20171170150068\Pictures\0cad6e0bd101c66ea57de7aa856d4230.jpg" />
+        </object-type>
+        <object-type name="PoerUp" sid="652319033421395">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="TempoExistencia" sid="830654340629099" type="number" />
+                <instance-variable name="IsTimed" sid="514201267124727" type="boolean" />
+                <instance-variable name="PowerUpTime" sid="586575222994768" type="number" />
+                <instance-variable name="isShootingSpeed" sid="566062548214039" type="boolean" />
+                <instance-variable name="ShootingInterval" sid="154469160095748" type="number" />
+                <instance-variable name="isBulletChanger" sid="593252955806689" type="boolean" />
+                <instance-variable name="BulletType" sid="849105119001259" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="587904280137785" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>GameLayout.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>GameEvento.xml</event-sheet>
+        <event-sheet>BalaEvento.xml</event-sheet>
+        <event-sheet>InimigoEvento.xml</event-sheet>
+        <event-sheet>PowerupEvento.xml</event-sheet>
+        <event-sheet>TipoInimigo.xml</event-sheet>
+        <event-sheet>TipoPowerup.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="7" />
+        <global-instance type="Touch" uid="8">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

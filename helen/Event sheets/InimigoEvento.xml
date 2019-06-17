@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>InimigoEvento</name>
+    <events>
+        <event-group description="" sid="869507869268255" title="Inimigo Horizontal">
+            <sub-events>
+                <event-block sid="466874755182792">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="573786643957565" type="inimigo">
+                            <param id="0" name="Instance variable">isSideMover</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="165606416267287">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="275415961220257" type="inimigo">
+                                    <param id="0" name="Instance variable">direcao</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;esquerda&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="MovimentoLados" id="7" name="Simulate control" sid="755104137554442" type="inimigo">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="760246629713529">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="881141810218120" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="MovimentoLados" id="7" name="Simulate control" sid="542976806034021" type="inimigo">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="513251178161029">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="739927291619247" type="inimigo">
+                                    <param id="0" name="Object">sensor</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="111138879119589">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="459438892157957" type="inimigo">
+                                            <param id="0" name="Instance variable">direcao</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;esquerda&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="346360635650198" type="inimigo">
+                                            <param id="0" name="Instance variable">direcao</param>
+                                            <param id="1" name="Value">&quot;direita&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="878864495047473">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="886568158308340" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="849831667196905" type="inimigo">
+                                            <param id="0" name="Instance variable">direcao</param>
+                                            <param id="1" name="Value">&quot;esquerda&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="463570307302978" title="Inimigo Vertical">
+            <sub-events>
+                <event-block sid="711834046197264">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="866939424518779" type="inimigo">
+                            <param id="0" name="Instance variable">isMoveDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="MovimentoBaixo" id="7" name="Simulate control" sid="684369621923416" type="inimigo">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="954675356760521">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="927111587352877" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="318731618081945">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="877778569687548" type="inimigo">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="MovimentoBaixo" id="7" name="Simulate control" sid="773627494684958" type="inimigo">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="842951138028496" title="Criação de inimigo">
+            <sub-events>
+                <variable constant="0" name="tipo" sid="513307709921008" static="0" type="number">0</variable>
+                <event-block sid="725461970627229">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="296284523377337" type="inimigo" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="486967514344576" type="System">
+                            <param id="0" name="Variable">tipo</param>
+                            <param id="1" name="Value">choose(0, 1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="539840276958598" type="inimigo">
+                            <param id="0" name="Instance variable">Energia</param>
+                            <param id="1" name="Value">EnemiesArray.At(tipo, 0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="342269270931133" type="inimigo">
+                            <param id="0" name="Instance variable">BulletTypeIni</param>
+                            <param id="1" name="Value">EnemiesArray.At(tipo, 1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="356083455989634" type="inimigo">
+                            <param id="0" name="Instance variable">Shootintervalo</param>
+                            <param id="1" name="Value">EnemiesArray.At(tipo, 2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="178887110987403" type="inimigo">
+                            <param id="0" name="Instance variable">DamageIni</param>
+                            <param id="1" name="Value">EnemiesArray.At(tipo, 3)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="785965764091023" type="inimigo">
+                            <param id="0" name="Instance variable">Shield</param>
+                            <param id="1" name="Value">EnemiesArray.At(tipo, 6)</param>
+                        </action>
+                        <action behavior="MovimentoLados" id="3" name="Set speed" sid="408529813004829" type="inimigo">
+                            <param id="0" name="Speed">EnemiesArray.At(tipo, 9)</param>
+                        </action>
+                        <action behavior="MovimentoBaixo" id="3" name="Set speed" sid="418010907891548" type="inimigo">
+                            <param id="0" name="Speed">EnemiesArray.At(tipo, 10)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="844198270665901" type="inimigo">
+                            <param id="0" name="Width">EnemiesArray.At(tipo, 11)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="275237541460072" type="inimigo">
+                            <param id="0" name="Width">EnemiesArray.At(tipo, 12)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>isMoveDown</comment>
+                        <event-block sid="167990412968668">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="919077781551808" type="EnemiesArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">4</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="495094446074477" type="inimigo">
+                                    <param id="0" name="Instance variable">isMoveDown</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="668824435324838">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="415677562272980" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="870080302974661" type="inimigo">
+                                    <param id="0" name="Instance variable">isMoveDown</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>destroyOnBottom</comment>
+                        <event-block sid="750043735887051">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="202746084114670" type="EnemiesArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">5</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="165550875784134" type="inimigo">
+                                    <param id="0" name="Instance variable">destroyOnBottom</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="181116040132469">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="117015478624062" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="844762412362966" type="inimigo">
+                                    <param id="0" name="Instance variable">destroyOnBottom</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>isShooting</comment>
+                        <event-block sid="153231077009824">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="951924444022777" type="EnemiesArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">7</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="542574599429534" type="inimigo">
+                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="976941488946473">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="106881982717021" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="408951834014739" type="inimigo">
+                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>isSideMover</comment>
+                        <event-block sid="268797682145572">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="938638381021735" type="EnemiesArray">
+                                    <param id="0" name="X">tipo</param>
+                                    <param id="1" name="Y">8</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="530660602534647" type="inimigo">
+                                    <param id="0" name="Instance variable">isSideMover</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="287795744274470">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="533993061705010" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="991538635607343" type="inimigo">
+                                    <param id="0" name="Instance variable">isSideMover</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="504628641424505">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="730359949183120" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="412075532322478" type="System">
+                            <param id="0" name="Object to create">inimigo</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">choose(76,279,200,300)</param>
+                            <param id="3" name="Y">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="438619790328318" title="Coisas do inimigo">
+            <sub-events>
+                <event-block sid="191749449643003">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="352894237353090" type="inimigo">
+                            <param id="0" name="Object">gravidade</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="106564583997214" type="inimigo">
+                            <param id="0" name="Instance variable">destroyOnBottom</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="181111444975241" type="inimigo" />
+                    </actions>
+                </event-block>
+                <event-block sid="188205542077220">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="451375698888187" type="Bullet">
+                            <param id="0" name="Object">inimigo</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="849371620610115" type="Bullet">
+                            <param id="0" name="Instance variable">IsPlaye</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="661151192724338">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="480004064034811" type="inimigo">
+                                    <param id="0" name="Instance variable">Shield</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Bullet.Damage</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="285673396272720" type="inimigo">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="135154270998948">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="545221022940497" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="739380615929784" type="inimigo">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Bullet.Damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="267670254651476">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="642555270252568" type="inimigo">
+                            <param id="0" name="Instance variable">Energia</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="671688851373891" type="inimigo" />
+                    </actions>
+                </event-block>
+                <event-block sid="195182835571846">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="637011125874847" type="inimigo">
+                            <param id="0" name="Object">controle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="440285563185644" type="controle">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">inimigo.DamageIni</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="463319295530963">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="696025109933982" type="inimigo">
+                            <param id="0" name="Instance variable">IsShooting</param>
+                        </condition>
+                        <condition id="-11" name="For Each" sid="204576175459948" type="System">
+                            <param id="0" name="Object">inimigo</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="211483470259458" type="System">
+                            <param id="0" name="Interval (seconds)">inimigo.Shootintervalo</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="139866841039036">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="486039016555877" type="System">
+                                    <param id="0" name="Object to create">Bullet</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="X">inimigo.ImagePointX(1)</param>
+                                    <param id="3" name="Y">inimigo.ImagePointY(1)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="979852838770304" type="Bullet">
+                                    <param id="0" name="Instance variable">IsPlaye</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="259753793256481" type="Bullet">
+                                    <param id="0" name="Instance variable">Damage</param>
+                                    <param id="1" name="Value">BulletArray.At(inimigo.BulletTypeini,0)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="727905418748049" type="Bullet">
+                                    <param id="0" name="Speed">BulletArray.At(inimigo.BulletTypeini, 1)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="621402881703306" type="Bullet">
+                                    <param id="0" name="Width">BulletArray.At(inimigo.BulletTypeini, 2)</param>
+                                    <param id="1" name="Height">BulletArray.At(inimigo.BulletTypeini, 3)</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="427464336624709" type="Bullet">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="128266221439009">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="222690676434603" type="inimigo">
+                            <param id="0" name="Object">Bullet</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="871360886497953" type="Bullet">
+                            <param id="0" name="Instance variable">IsPlaye</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="398971230779668">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="599647023080206" type="inimigo">
+                                    <param id="0" name="Instance variable">Invuneravel</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="196923152529241" type="inimigo">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Bullet.SemDano</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="838414268795481" type="System">
+                                    <param id="0" name="Seconds">inimigo.VunerabilidadeTempo</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="335961249807210" type="inimigo">
+                                    <param id="0" name="Instance variable">Invuneravel</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="307539015427823">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="907366736910344" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="831025521206570" type="inimigo">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="458376973349452" type="inimigo">
+                                    <param id="0" name="Instance variable">Energia</param>
+                                    <param id="1" name="Value">Bullet.Damage</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="486910238370731" type="inimigo">
+                                    <param id="0" name="Instance variable">Invuneravel</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="524220208196412">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="927998789100795" type="Bullet">
+                            <param id="0" name="Object">sensor</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="319855035765558" type="Bullet" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

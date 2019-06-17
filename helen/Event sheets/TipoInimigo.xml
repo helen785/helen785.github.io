@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TipoInimigo</name>
+    <events>
+        <comment>index do array -&gt; explicação -&gt; variavel em que vai ficar&#x0D;&#x0A;-------------------------------------------------&#x0D;&#x0A;0 -&gt; energia -&gt; Energy&#x0D;&#x0A;1 -&gt; bullet type -&gt; BulletType&#x0D;&#x0A;2 -&gt; intervalo de tiro -&gt; ShootingInterval&#x0D;&#x0A;3 -&gt; dano que o player leva quando colide com o inimigo -&gt; HitDamage&#x0D;&#x0A;4 -&gt; se move pra baixo ou não -&gt; isMoveDown *&#x0D;&#x0A;5 -&gt; se morre quando chega em baixo ou não -&gt; DestroyOnBottom *&#x0D;&#x0A;6 -&gt; escudinho do inimiguinho -&gt;Shield&#x0D;&#x0A;7 -&gt; se ele atira ou não -&gt;isShooting * &#x0D;&#x0A;8 -&gt; se ele se move para os lados ou não -&gt; isSideMover *&#x0D;&#x0A;9 -&gt; se 8 for verdareira, a velocidade em que se move para os lados -&gt; SideMovementSpeed&#x0D;&#x0A;10 -&gt; se 4 for verdadeira, a velocidade em que se move para baixo -&gt; 8direction.maxSpeed&#x0D;&#x0A;11 -&gt; tamanho x &#x0D;&#x0A;12 -&gt; tamanho y</comment>
+        <comment>&#x0D;&#x0A;&#x0D;&#x0A;isSideMover: variavel boolean, se for verdadeiro habilita o movimento lateral do inimigo. (Padrao: false).&#x0D;&#x0A;SideMovementSpeed: Define a velocidade de movimentacao lateral do inimigo. (Padrao: 0)&#x0D;&#x0A;Apos criar pelo menos dois tipos diferentes de inimigos em EnemiesES, faça com que o jogo crie aleatoriamente, com chances iguais, os inimigos desses diferentes tipos.&#x0D;&#x0A;Por fim, faça o mesmo esquema para os powerups, criando pelo menos dois tipos diferentes:&#x0D;&#x0A;&#x0D;&#x0A;Crie um novo array PowerupsArray, lembrando de adicionar Height o bastante para as variaveis que serão necessárias para gerenciar os valores do PowerupController.&#x0D;&#x0A;Crie um novo event sheet PowerupsES, para criar os powerups.&#x0D;&#x0A;Adicione pelo menos dois powerups diferentes em seu jogo.&#x0D;&#x0A;Faça com que, quando um inimigo morrer, um powerup aleatorio seja criado, com chances iguais entre eles.&#x0D;&#x0A;</comment>
+        <event-block sid="881366028286986">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="990327377172772" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Inimigo 1</comment>
+                <event-block sid="529497125041222">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="352506286313546" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">50</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="950057527350662" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="324127525646104" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="338538415945103" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">3</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="194330314377307" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">4</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="620710201557968" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">5</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="912338314323689" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">6</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="587383789199825" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">7</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="552051208751667" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">8</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="605316176317976" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">9</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="452838274329551" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">10</param>
+                            <param id="2" name="Value">200</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="483565574452631" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">11</param>
+                            <param id="2" name="Value">200</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="443508147392293" type="EnemiesArray">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">12</param>
+                            <param id="2" name="Value">130</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Inimigo 2</comment>
+                <event-block sid="239570594131800">
+                    <conditions />
+                    <actions>
+                        <action id="3" name="Set at XY" sid="282650195878733" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="713824706618516" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="853401495337843" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">0.5</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="795054492690418" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">3</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="145689256992081" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">4</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="897236585940998" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">5</param>
+                            <param id="2" name="Value">0</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="868517744155697" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">6</param>
+                            <param id="2" name="Value">20</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="825665759792026" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">7</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="936370633573587" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">8</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="976798962341462" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">9</param>
+                            <param id="2" name="Value">50</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="817134833293067" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">10</param>
+                            <param id="2" name="Value">200</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="474031084367361" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">11</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="688095807553564" type="EnemiesArray">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">12</param>
+                            <param id="2" name="Value">65</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
